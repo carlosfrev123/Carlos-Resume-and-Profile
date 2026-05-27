@@ -150,6 +150,15 @@ function App() {
                 linkedin.com/in/carlosfrevilla
               </a>
             </span>
+            <span>
+              <a
+                href="https://github.com/carlosfrev123/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </span>
           </div>
           <div className="title-badge">
             <span className="badge">Full-Stack Software Engineer</span>
@@ -162,11 +171,11 @@ function App() {
           {/* Download Resume Section */}
           <div className="download-resume">
             <span className="download-label">Download Resume:</span>
-            <a href="/resume/Carlos_F_Revilla-Resume.pdf" download className="download-link">PDF</a>
+            <a href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.pdf" download className="download-link">PDF</a>
             <span className="download-separator">|</span>
-            <a href="/resume/Carlos_F_Revilla-Resume.docx" download className="download-link">DOCX</a>
+            <a href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.docx" download className="download-link">DOCX</a>
             <span className="download-separator">|</span>
-            <a href="/resume/Carlos_F_Revilla-Resume.html" download className="download-link">HTML</a>
+            <a href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.html" download className="download-link">HTML</a>
           </div>
         </header>
 
