@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import ContactForm from "./components/ContactForm";
-import AIDemo from "./components/AIDemo";
+import Projects from "./components/Projects";
 
 function App() {
   const [activeTab, setActiveTab] = useState("resume");
 
-  // Professional summary
+  // Professional Summary
   const professionalSummary =
-    "Full-Stack Software Engineer & Data Science MS candidate specializing in AI/ML integration and cloud architecture. Expert in building scalable data pipelines (Apache Kafka, AWS ECS) and production AI systems (99.9% accuracy DinoV2). Passionate about bridging the gap between data science research and production engineering.";
+    "Full-Stack Software Engineer with 2+ years of experience building cloud-native platforms and data-intensive applications. Proficient in C#/.NET, React, TypeScript, and AWS infrastructure (ECS, Terraform, CI/CD). Currently pursuing an M.S. in Data Science at UVA with hands-on project experience in AI/ML, Data Engineering, and NLP. Leverages AI-assisted development tools to accelerate delivery while building a strong foundation in machine learning engineering.";
 
   // Work Experience Data
   const workExperience = [
@@ -18,10 +18,10 @@ function App() {
       location: "Cambridge, MA",
       dates: "Jan 2026 - Present",
       achievements: [
-        "✅ Architected secure multi-tenant cloud platform on AWS ECS Fargate using Terraform for IaC (ALB routing, TLS certificates, per-tenant state isolation)",
-        "✅ Built high-throughput C#/.NET background service with Quartz.NET and Citus/RDS aggregating patient device data",
-        "✅ Designed automated CI/CD pipeline with GitHub Actions + OIDC authentication (Docker builds, ECR pushes, zero-downtime deployments)",
-        "✅ Engineered performant data pipelines ensuring transactional integrity for sensitive healthcare datasets",
+        "Architected a secure, multi-tenant cloud platform on AWS ECS Fargate using Terraform for IaC to provision ALB routing, TLS certificates, and per-tenant state isolation with S3 backends, a pattern directly transferable to Azure SQL elastic pools and Key Vault.",
+        "Built a high-throughput C#/.NET background service using Quartz.NET and Citus/RDS to aggregate and process critical device utilization data, delivering actionable insights to a client-facing dashboard.",
+        "Designed and implemented a fully automated CI/CD pipeline with GitHub Actions and OIDC-based authentication, orchestrating Docker builds, ECR pushes, and zero-downtime deployments—demonstrating the core practices of Azure DevOps.",
+        "Engineered performant data pipelines to relay critical issues, ensuring transactional integrity for sensitive, multi-tenant datasets.",
       ],
     },
     {
@@ -30,10 +30,10 @@ function App() {
       location: "Charlottesville, VA",
       dates: "May 2024 - February 2025",
       achievements: [
-        "✅ Resolved critical data integrity issues in Solr pipeline by re-ingesting missing columns, eliminating 28% of user-reported errors",
-        "✅ Optimized performance by resolving N+1 query bottlenecks — improved search load times by ~300ms",
-        "✅ Championed code quality with comprehensive Jest test suite, reducing manual QA efforts by 2 hours/week",
-        "✅ Collaborated with stakeholders to translate business requirements into high-availability features",
+        "Resolved critical data integrity issues within a Solr data pipeline by diagnosing and re-ingesting missing table columns from source databases, restoring content accuracy and eliminating 28% of user-reported errors in a data-intensive product.",
+        "Optimized application performance by identifying and resolving N+1 query bottlenecks against large SQL datasets through strategic caching and batching, directly improving search result load times by ~300ms on web and mobile applications.",
+        "Championed code quality and reduced manual QA efforts by 2 hours per week by creating a comprehensive unit test suite with Jest, ensuring the reliability of data-critical features.",
+        "Collaborated directly with product stakeholders to translate business requirements into technical solutions for a high-availability publishing platform.",
       ],
     },
     {
@@ -42,8 +42,8 @@ function App() {
       location: "Miami, FL",
       dates: "June 2022 - August 2022",
       achievements: [
-        "Engineered structured Excel databases to track hundreds of product SKUs for rapid querying",
-        "Managed product information review lifecycle, enforcing rigorous QA against source data",
+        "Engineered structured Excel data management systems to categorize and track hundreds of product SKUs, empowering colleagues to rapidly query specifications and answer client inquiries, mirroring the self-service nature of internal finance tools.",
+        "Managed the product information review lifecycle, enforcing a rigorous quality assurance process to validate technical specs against source data, ensuring a high standard of data governance.",
       ],
     },
   ];
@@ -51,47 +51,22 @@ function App() {
   // Education Data
   const education = [
     {
-      degree: "M.S. Data Science",
+      degree: "M.S., Data Science",
       school: "University of Virginia",
       date: "Expected May 2027",
-      focus: "Machine Learning, Data Engineering, Natural Language Processing",
+      focus: "Machine Learning, Data Engineering, Natural Language Processing.",
     },
     {
-      degree: "B.A. Computer Science",
+      degree: "B.A., Computer Science",
       school: "University of Virginia",
       date: "August 2020 - May 2024",
-      focus: "Minor: Data Science | AI, Data Science Systems, Database Systems",
+      focus: "Minor: Data Science. Relevant Coursework: Artificial Intelligence, Data Science Systems, Database Systems.",
     },
     {
       degree: "Software Engineering Bootcamp",
       school: "Codesmith (Full-time Immersive)",
       date: "May 2023 - September 2023",
-      focus:
-        "Advanced JavaScript, TypeScript, React + Redux Toolkit, Database Design",
-    },
-  ];
-
-  // Projects Data
-  const projects = [
-    {
-      name: "OS-Labs: KafkaNightOwl",
-      tech: "Node.js/Express, Kafka, MongoDB, React, TypeScript",
-      description:
-        "Built message data & metrics service streamlining Kafka transactions with ACID-compliant persistence",
-      highlights: [
-        "✅ ACID-compliant MongoDB persistence for transaction integrity",
-        "✅ Flux architecture for scalable UI state management",
-      ],
-    },
-    {
-      name: "Acne-AI",
-      tech: "DinoV2, Python, TensorFlow, Google Colab, Axios",
-      description: "Medical diagnosis AI achieving 99.9% accuracy",
-      highlights: [
-        "✅ Fine-tuned DinoV2 vision model on T4 GPU for 10 epochs",
-        "✅ 99.9% model accuracy — train/val loss: 0.031/0.062",
-        "✅ Integrated Axios for seamless model communication, reducing latency",
-      ],
+      focus: "Advanced JavaScript, TypeScript, React, and database design.",
     },
   ];
 
@@ -100,8 +75,9 @@ function App() {
       title: "GraphQL & the N+1 Problem",
       role: "Speaker",
       date: "July 2023",
-      description: "Presented solutions to GraphQL's N+1 query issues",
-      sponsors: "Sponsored by Codesmith, Jeeny, and Bractlet",
+      description:
+        "Delivered a technical talk on identifying and resolving GraphQL N+1 query issues, a direct parallel to optimizing complex, relational queries against a large Azure SQL schema.",
+      sponsors: "Sponsored by Codesmith, Jeeny, and Bractlet.",
     },
   ];
 
@@ -116,21 +92,43 @@ function App() {
       "C++",
       "SAS",
       "R",
+      "ASP.NET",
+      "Entity Framework",
+      "jQuery",
     ],
     cloud: [
-      "AWS (ECS, RDS, API Gateway)",
+      "Microsoft Azure (App Service, Functions, Entra ID, Key Vault, SQL Database)",
+      "AWS",
       "Terraform",
       "Docker",
-      "CI/CD (GitHub Actions)",
+      "CI/CD (GitHub Actions, Azure DevOps)",
     ],
     dataAI: [
+      "Azure SQL / SQL Server",
       "Apache Kafka",
       "GraphQL",
-      "DinoV2 (99.9% accuracy)",
+      "LangChain",
+      "Semantic Kernel",
+      "DinoV2",
       "TensorFlow",
       "RAG Pipelines",
     ],
-    tools: ["Git", "Redis/Caching", "Jest", "MongoDB", "PostgreSQL"],
+    financial: [
+      "API Architecture",
+      "ETL/ELT",
+      "State Isolation",
+      "Sensitive Data Handling",
+      "Investran (Conceptual)",
+      "MCP Server Design (Conceptual)",
+    ],
+  };
+
+  // Sidebar scroll handler
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   return (
@@ -138,15 +136,12 @@ function App() {
       <div className="container">
         <header>
           <h1>Carlos Fernando Revilla</h1>
-          <div className="title-badge">
-            <span className="badge">Full-Stack Software Engineer</span>
-            <span className="badge">M.S. Data Science Candidate</span>
-            <span className="badge">AI/ML Practitioner</span>
-          </div>
           <div className="contact-info">
-            <span>✉️ carlosfr.mgmt@gmail.com</span>
+            <strong>Contact Info:</strong>
             <span>
-              🔗{" "}
+              <a href="mailto:carlosfr.mgmt@gmail.com">carlosfr.mgmt@gmail.com</a>
+            </span>
+            <span>
               <a
                 href="https://www.linkedin.com/in/carlosfrevilla/"
                 target="_blank"
@@ -156,8 +151,22 @@ function App() {
               </a>
             </span>
           </div>
+          <div className="title-badge">
+            <span className="badge">Full-Stack Software Engineer</span>
+            <span className="badge">M.S. Data Science Candidate</span>
+            <span className="badge">AI/ML & Cloud Architect</span>
+          </div>
           <div className="summary">
             <p>{professionalSummary}</p>
+          </div>
+          {/* Download Resume Section */}
+          <div className="download-resume">
+            <span className="download-label">Download Resume:</span>
+            <a href="/resume/Carlos_F_Revilla-Resume.pdf" download className="download-link">PDF</a>
+            <span className="download-separator">|</span>
+            <a href="/resume/Carlos_F_Revilla-Resume.docx" download className="download-link">DOCX</a>
+            <span className="download-separator">|</span>
+            <a href="/resume/Carlos_F_Revilla-Resume.html" download className="download-link">HTML</a>
           </div>
         </header>
 
@@ -166,150 +175,167 @@ function App() {
             className={activeTab === "resume" ? "active" : ""}
             onClick={() => setActiveTab("resume")}
           >
-            📄 Resume
+            Resume
           </button>
           <button
-            className={activeTab === "ai-demo" ? "active" : ""}
-            onClick={() => setActiveTab("ai-demo")}
+            className={activeTab === "projects" ? "active" : ""}
+            onClick={() => setActiveTab("projects")}
           >
-            🤖 AI Demo
+            Projects & Samples
           </button>
           <button
             className={activeTab === "contact" ? "active" : ""}
             onClick={() => setActiveTab("contact")}
           >
-            ✉️ Contact
+            Contact
           </button>
         </div>
 
-        {/* RESUME TAB */}
+        {/* RESUME TAB WITH SIDEBAR */}
         {activeTab === "resume" && (
-          <div className="tab-content">
-            {/* Work Experience */}
-            <section>
-              <h2>💼 Work Experience</h2>
-              {workExperience.map((job, idx) => (
-                <div key={idx} className="job">
-                  <div className="job-header">
+          <div className="resume-layout">
+            {/* Sidebar Navigation */}
+            <nav className="resume-sidebar">
+              <h4>On This Page</h4>
+              <ul>
+                <li>
+                  <button onClick={() => scrollToSection("work-experience")}>
+                    Work Experience
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("talks")}>
+                    Talks & Publications
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("education")}>
+                    Education
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => scrollToSection("technical-skills")}>
+                    Technical Skills
+                  </button>
+                </li>
+              </ul>
+            </nav>
+
+            {/* Main Resume Content */}
+            <div className="tab-content">
+              {/* Work Experience */}
+              <section id="work-experience">
+                <h2>Work Experience</h2>
+                {workExperience.map((job, idx) => (
+                  <div key={idx} className="job">
+                    <div className="job-header">
+                      <h3>
+                        {job.title} @ {job.company}
+                      </h3>
+                      <span className="job-date">{job.dates}</span>
+                    </div>
+                    <p className="job-location">{job.location}</p>
+                    <ul>
+                      {job.achievements.map((achievement, i) => (
+                        <li key={i}>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </section>
+
+              {/* Talks */}
+              <section id="talks">
+                <h2>Talks & Publications</h2>
+                {talks.map((talk, idx) => (
+                  <div key={idx} className="talk">
                     <h3>
-                      {job.title} @ {job.company}
+                      {talk.title} — {talk.role}
                     </h3>
-                    <span className="job-date">{job.dates}</span>
+                    <p className="talk-date">{talk.date}</p>
+                    <p>{talk.description}</p>
+                    <p className="talk-sponsors">{talk.sponsors}</p>
                   </div>
-                  <p className="job-location">{job.location}</p>
-                  <ul>
-                    {job.achievements.map((achievement, i) => (
-                      <li
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: achievement }}
-                      />
-                    ))}
-                  </ul>
+                ))}
+                
+                <div className="projects-cta">
+                  <p>Project publications can be found in the dedicated projects tab.</p>
+                  <button 
+                    onClick={() => setActiveTab("projects")}
+                    className="nav-to-projects-btn"
+                  >
+                    View Projects & Samples
+                  </button>
                 </div>
-              ))}
-            </section>
+              </section>
 
-            {/* Projects */}
-            <section>
-              <h2>🚀 Projects</h2>
-              {projects.map((project, idx) => (
-                <div key={idx} className="project">
-                  <h3>{project.name}</h3>
-                  <p className="project-tech">{project.tech}</p>
-                  <p>{project.description}</p>
-                  <ul>
-                    {project.highlights.map((highlight, i) => (
-                      <li
-                        key={i}
-                        dangerouslySetInnerHTML={{ __html: highlight }}
-                      />
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </section>
-
-            {/* Talks */}
-            <section>
-              <h2>🎤 Talks & Publications</h2>
-              {talks.map((talk, idx) => (
-                <div key={idx} className="talk">
-                  <h3>
-                    {talk.title} — {talk.role}
-                  </h3>
-                  <p className="talk-date">{talk.date}</p>
-                  <p>{talk.description}</p>
-                  <p className="talk-sponsors">{talk.sponsors}</p>
-                </div>
-              ))}
-            </section>
-
-            {/* Education */}
-            <section>
-              <h2>🎓 Education</h2>
-              {education.map((edu, idx) => (
-                <div key={idx} className="education">
-                  <div className="edu-header">
-                    <h3>{edu.degree}</h3>
-                    <span className="edu-date">{edu.date}</span>
+              {/* Education */}
+              <section id="education">
+                <h2>Education</h2>
+                {education.map((edu, idx) => (
+                  <div key={idx} className="education">
+                    <div className="edu-header">
+                      <h3>{edu.degree}</h3>
+                      <span className="edu-date">{edu.date}</span>
+                    </div>
+                    <p>{edu.school}</p>
+                    <p className="edu-focus">{edu.focus}</p>
                   </div>
-                  <p>{edu.school}</p>
-                  <p className="edu-focus">{edu.focus}</p>
-                </div>
-              ))}
-            </section>
+                ))}
+              </section>
 
-            {/* Skills */}
-            <section>
-              <h2>⚙️ Technical Skills</h2>
-              <div className="skills-category">
-                <h3>Languages</h3>
-                <div className="skills-list">
-                  {skills.languages.map((skill, i) => (
-                    <span key={i} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
+              {/* Skills */}
+              <section id="technical-skills">
+                <h2>Technical Skills</h2>
+                <div className="skills-category">
+                  <h3>Languages & Frameworks</h3>
+                  <div className="skills-list">
+                    {skills.languages.map((skill, i) => (
+                      <span key={i} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="skills-category">
-                <h3>Cloud & Infrastructure</h3>
-                <div className="skills-list">
-                  {skills.cloud.map((skill, i) => (
-                    <span key={i} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
+                <div className="skills-category">
+                  <h3>Cloud & Infrastructure</h3>
+                  <div className="skills-list">
+                    {skills.cloud.map((skill, i) => (
+                      <span key={i} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="skills-category">
-                <h3>Data & AI</h3>
-                <div className="skills-list">
-                  {skills.dataAI.map((skill, i) => (
-                    <span key={i} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
+                <div className="skills-category">
+                  <h3>Data & AI</h3>
+                  <div className="skills-list">
+                    {skills.dataAI.map((skill, i) => (
+                      <span key={i} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="skills-category">
-                <h3>Tools</h3>
-                <div className="skills-list">
-                  {skills.tools.map((skill, i) => (
-                    <span key={i} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
+                <div className="skills-category">
+                  <h3>Financial Services & Integrations</h3>
+                  <div className="skills-list">
+                    {skills.financial.map((skill, i) => (
+                      <span key={i} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         )}
 
-        {/* AI DEMO TAB */}
-        {activeTab === "ai-demo" && (
+        {/* PROJECTS & SAMPLES TAB */}
+        {activeTab === "projects" && (
           <div className="tab-content">
-            <AIDemo />
+            <Projects />
           </div>
         )}
 
@@ -321,13 +347,7 @@ function App() {
         )}
 
         <footer>
-          <p>
-            Built with React + Vite + TensorFlow.js | Hosted on GitHub Pages
-          </p>
-          <p>
-            📊 M.S. Data Science @ UVA | 🤖 99.9% Accuracy DinoV2 | ☁️ AWS
-            Infrastructure
-          </p>
+          <p>Built with React + Vite + TensorFlow.js</p>
         </footer>
       </div>
     </div>

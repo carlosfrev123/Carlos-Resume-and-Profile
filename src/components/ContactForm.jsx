@@ -1,3 +1,4 @@
+// src/components/ContactForm.jsx
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -12,10 +13,10 @@ const ContactForm = () => {
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isLoading, setIsLoading] = useState(false);
 
-  // 👇 YOUR ACTUAL KEYS - Fix the Public Key (remove 'user_' prefix)
+  // Your EmailJS keys
   const SERVICE_ID = 'service_jibhxbp';
   const TEMPLATE_ID = 'template_y3wimd7';
-  const PUBLIC_KEY = 'KeGmbgQndUo_XHFLY';  // ← REMOVED 'user_' prefix
+  const PUBLIC_KEY = 'KeGmbgQndUo_XHFLY';
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -52,7 +53,7 @@ const ContactForm = () => {
       if (result.status === 200) {
         setStatus({ 
           type: 'success', 
-          message: '✅ Message sent successfully! I\'ll get back to you within 24-48 hours.' 
+          message: 'Message sent successfully! I\'ll get back to you within 24-48 hours.' 
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
       }
@@ -60,7 +61,7 @@ const ContactForm = () => {
       console.error('EmailJS error details:', error);
       setStatus({ 
         type: 'error', 
-        message: '❌ Failed to send. Please email me directly at carlosfr.mgmt@gmail.com'
+        message: 'Failed to send. Please email me directly at carlosfr.mgmt@gmail.com'
       });
     } finally {
       setIsLoading(false);
@@ -68,9 +69,13 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="contact-form-container">
-      <h3>📧 Get in Touch</h3>
-      <p>Fill out the form below and I'll respond within 24-48 hours.</p>
+    <div className="contact-form-wrapper">
+      <div className="contact-header">
+        <h2>Get in Touch</h2>
+        <p className="contact-subtitle">
+          Fill out the form below and I'll respond within 24-48 hours.
+        </p>
+      </div>
       
       {status.message && (
         <div className={`status-message ${status.type}`}>
@@ -79,33 +84,35 @@ const ContactForm = () => {
       )}
       
       <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
-        <div className="form-group">
-          <label htmlFor="name">Name *</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            placeholder="Your name"
-          />
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="name">Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Your name"
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="your.email@example.com"
+            />
+          </div>
         </div>
         
-        <div className="form-group">
-          <label htmlFor="email">Email *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="your.email@example.com"
-          />
-        </div>
-        
-        <div className="form-group">
+        <div className="form-group full-width">
           <label htmlFor="subject">Subject *</label>
           <input
             type="text"
@@ -118,7 +125,7 @@ const ContactForm = () => {
           />
         </div>
         
-        <div className="form-group">
+        <div className="form-group full-width">
           <label htmlFor="message">Message *</label>
           <textarea
             id="message"
@@ -126,7 +133,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            rows="5"
+            rows="6"
             placeholder="Your message here..."
           />
         </div>
@@ -137,8 +144,10 @@ const ContactForm = () => {
       </form>
       
       <div className="alternative-contact">
-        <p>Or reach me directly:</p>
-        <p>✉️ carlosfr.mgmt@gmail.com</p>
+        <p className="alt-contact-label">Or reach me directly:</p>
+        <a href="mailto:carlosfr.mgmt@gmail.com" className="email-link">
+          carlosfr.mgmt@gmail.com
+        </a>
       </div>
     </div>
   );

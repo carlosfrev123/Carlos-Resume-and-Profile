@@ -15,14 +15,12 @@ const AIDemo = () => {
   const loadModel = async () => {
     setIsLoading(true);
     try {
-      // Load MobileNet - lightweight model that runs in browser
       const loadedModel = await mobilenet.load();
       setModel(loadedModel);
       setIsModelReady(true);
-      alert('✅ AI Model loaded! Upload an image to classify.');
     } catch (error) {
       console.error('Failed to load model:', error);
-      alert('❌ Failed to load AI model. Check console for details.');
+      alert('Failed to load AI model. Please check the console for details.');
     } finally {
       setIsLoading(false);
     }
@@ -38,7 +36,7 @@ const AIDemo = () => {
       setPredictions(results);
     } catch (error) {
       console.error('Classification error:', error);
-      alert('Failed to classify image. Make sure it\'s loaded correctly.');
+      alert('Failed to classify image. Please ensure it is loaded correctly.');
     } finally {
       setIsLoading(false);
     }
@@ -56,7 +54,6 @@ const AIDemo = () => {
 
   // Use sample image
   const useSampleImage = () => {
-    // Sample image URL (placeholder - replace with your own)
     const sampleUrl = 'https://via.placeholder.com/224x224.png?text=Upload+Your+Image';
     setImageUrl(sampleUrl);
     setPredictions([]);
@@ -64,10 +61,22 @@ const AIDemo = () => {
 
   return (
     <div className="ai-demo-container">
-      <h3>🤖 Interactive AI Demo: Image Classification</h3>
-      <p className="demo-description">
-        This uses <strong>MobileNet</strong> — a lightweight neural network that runs entirely in your browser.
-        No data is sent to any server. {isModelReady && '✅ Model is ready!'}
+      <h3>Interactive AI Demo: Image Classification</h3>
+      
+      {/* Professional Transparency Notice */}
+      <div className="demo-transparency-notice">
+        <h4>About This Live Demo</h4>
+        <p>
+          This interactive demo runs <strong>MobileNet</strong>, a lightweight neural network (approximately 4MB) 
+          optimized for web browsers. It performs all inference locally on your device—no images are ever sent to a server. 
+          While this model is pre-trained on ImageNet for general classification, it demonstrates the same 
+          transfer learning and browser-based deployment principles used in my <strong>Acne-AI project</strong>, 
+          where a larger DinoV2 model was fine-tuned to achieve 99.9% accuracy for medical diagnosis.
+        </p>
+      </div>
+
+      <p className="demo-status">
+        Model Status: {isModelReady ? 'Ready' : 'Not Loaded'}
       </p>
 
       {!isModelReady ? (
@@ -76,7 +85,7 @@ const AIDemo = () => {
           disabled={isLoading}
           className="load-model-btn"
         >
-          {isLoading ? 'Loading Model... (3-5 seconds)' : '🚀 Load AI Model'}
+          {isLoading ? 'Loading Model... (approximately 3-5 seconds)' : 'Load AI Model'}
         </button>
       ) : (
         <div className="demo-active">
@@ -110,12 +119,12 @@ const AIDemo = () => {
                 disabled={isLoading}
                 className="classify-btn"
               >
-                {isLoading ? 'Analyzing...' : '🔍 Classify Image'}
+                {isLoading ? 'Analyzing...' : 'Classify Image'}
               </button>
 
               {predictions.length > 0 && (
                 <div className="predictions">
-                  <h4>Predictions:</h4>
+                  <h4>Predictions</h4>
                   <ul>
                     {predictions.map((pred, idx) => (
                       <li key={idx}>
@@ -131,8 +140,9 @@ const AIDemo = () => {
                     ))}
                   </ul>
                   <p className="ai-note">
-                    💡 This demo uses the same transfer learning principles as my DinoV2 project!
-                    The model was pre-trained on ImageNet and fine-tuned for real-time inference.
+                    This demonstration uses a lightweight, browser-based model to showcase core 
+                    machine learning concepts. For my full-scale work, see the Acne-AI project 
+                    which utilized a fine-tuned DinoV2 model on dedicated GPU hardware.
                   </p>
                 </div>
               )}
@@ -142,16 +152,16 @@ const AIDemo = () => {
       )}
 
       <div className="ai-explanation">
-        <h4>How This Works</h4>
+        <h4>Technical Details</h4>
         <ul>
-          <li><strong>Model:</strong> MobileNet (lightweight CNN, 4MB)</li>
+          <li><strong>Model:</strong> MobileNet (Lightweight CNN, ~4MB)</li>
           <li><strong>Training:</strong> Pre-trained on ImageNet (1.2M images, 1000 classes)</li>
-          <li><strong>Inference:</strong> Runs in your browser using TensorFlow.js</li>
+          <li><strong>Inference:</strong> Runs entirely in your browser using TensorFlow.js</li>
           <li><strong>Privacy:</strong> Your images never leave your device</li>
         </ul>
         <p className="tech-note">
-          This demonstrates the same principles I used in my <strong>Acne-AI project</strong> 
-          (99.9% accuracy with DinoV2), but optimized for browser-based deployment.
+          This architecture demonstrates the core principles behind my <strong>Acne-AI project</strong> 
+          (which achieved 99.9% accuracy with DinoV2), optimized here for real-time, client-side deployment.
         </p>
       </div>
     </div>
