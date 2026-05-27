@@ -1,16 +1,51 @@
-# React + Vite
+# Carlos Revilla — Resume & Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, single-page portfolio website built with React and Vite, showcasing my professional experience, projects, and skills as a Full-Stack Software Engineer and M.S. Data Science candidate.
 
-Currently, two official plugins are available:
+**Live Site:** [carlosfrev123.github.io/Carlos-Resume-and-Portfolio](https://carlosfrev123.github.io/Carlos-Resume-and-Portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Interactive Resume** — Detailed work experience, education, skills, and talks with smooth-scroll sidebar navigation
+- **Projects & Samples** — Live AI demo (TensorFlow.js) and detailed project cards with GitHub links
+- **Contact Form** — EmailJS-powered contact form for direct outreach
+- **Downloadable Resume** — PDF, DOCX, and HTML formats available
+- **Responsive Design** — Clean, professional layout optimized for all devices
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | React, Vite, JavaScript |
+| **Styling** | CSS3 (Custom Properties, Grid, Flexbox) |
+| **AI/ML** | TensorFlow.js, MobileNet |
+| **Integrations** | EmailJS (contact form), GitHub Pages (hosting) |
+
+---
+
+## If you want to use this template for your own website you can follow these steps:
+
+### Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/carlosfrev123/Carlos-Resume-and-Portfolio.git
+
+# Navigate to project directory
+cd Carlos-Resume-and-Portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
