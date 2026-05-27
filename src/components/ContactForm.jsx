@@ -13,11 +13,6 @@ const ContactForm = () => {
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isLoading, setIsLoading] = useState(false);
 
-  // Your EmailJS keys
-  const SERVICE_ID = 'service_jibhxbp';
-  const TEMPLATE_ID = 'template_y3wimd7';
-  const PUBLIC_KEY = 'KeGmbgQndUo_XHFLY';
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -44,10 +39,10 @@ const ContactForm = () => {
       };
 
       const result = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
-        PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       
       if (result.status === 200) {
