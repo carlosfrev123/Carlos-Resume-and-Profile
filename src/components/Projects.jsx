@@ -5,6 +5,23 @@ import AIDemo from "./AIDemo";
 // Expanded project data based on your resume and provided links
 const projectData = [
   {
+    id: "portfolio-site",
+    name: "Carlos Resume & Portfolio",
+    type: "Frontend / Personal Brand",
+    tech: "React, Vite, CSS3, TensorFlow.js, EmailJS, GitHub Pages",
+    description: "This very site! A professional portfolio and resume website with interactive AI demo, contact form, and automated resume downloads.",
+    highlights: [
+      "Built with React and Vite for fast development and optimized production builds.",
+      "Integrated TensorFlow.js for a live AI image classification demo running entirely in the browser.",
+      "Implemented automated CI/CD pipeline with GitHub Actions for continuous deployment.",
+      "Connected Google Docs resume to auto-update downloadable files via Google Apps Script integration.",
+      "Professional contact form with EmailJS integration and domain-restricted API keys."
+    ],
+    links: {
+      github: "https://github.com/carlosfrev123/Carlos-Resume-and-Profile",
+    }
+  },
+  {
     id: "kafka-nightowl",
     name: "KafkaNightOwl: Kafka Metric Visualizer & Monitoring Tool",
     type: "Open Source / Full-Stack",
@@ -40,7 +57,7 @@ const projectData = [
     id: "space-me",
     name: "Space.me",
     type: "Full-Stack Engineering",
-    tech: "PostgreSQL, NASA API, JavaScript (Inferred), Node.js (Inferred)",
+    tech: "PostgreSQL, NASA API, JavaScript, Node.js",
     description: "A celestial event tracker that optimized database performance and integrated live NASA data.",
     highlights: [
       "Executed advanced indexing strategies on a PostgreSQL database exceeding 3,000 records, reducing critical report runtime by up to 10 minutes daily.",
@@ -54,7 +71,7 @@ const projectData = [
     id: "mewantfood",
     name: "MeWantFood",
     type: "Full-Stack Engineering",
-    tech: "JavaScript, Node.js, Express (Inferred), Yelp API, cookie-parser",
+    tech: "JavaScript, Node.js, Express, Yelp API, cookie-parser",
     description: "A restaurant discovery app with secure session management and Yelp integration.",
     highlights: [
       "Implemented cookie handling using the cookie-parser library to manage user sessions effectively.",
@@ -94,10 +111,9 @@ function Projects() {
             View Repository on GitHub
           </a>
         )}
-        {/* Fallback for projects without a live link */}
         {!selectedProject.links?.github && (
           <p className="contact-notice">
-            For repository access, please <button className="inline-button" onClick={() => setActiveTab("contact")}>contact me</button>.
+            For repository access, please contact me.
           </p>
         )}
       </div>
@@ -106,7 +122,7 @@ function Projects() {
 
   return (
     <div className="projects-grid">
-      {/* AI Demo Card - Your existing component becomes a card */}
+      {/* AI Demo Card */}
       <div className="project-card ai-demo-card">
         <div className="card-header">
           <h3>Live AI Demo</h3>
@@ -117,7 +133,7 @@ function Projects() {
         </div>
       </div>
 
-      {/* Other Project Cards from resume */}
+      {/* Project Cards - Portfolio site now first */}
       {projectData.map((project) => (
         <div key={project.id} className="project-card">
           <div className="card-header">
