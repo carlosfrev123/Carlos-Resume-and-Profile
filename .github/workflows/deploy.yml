@@ -4,6 +4,8 @@ on:
   push:
     branches: [dev]
   workflow_dispatch:
+  repository_dispatch: 
+    types: [resume-updated]
 
 permissions:
   contents: read
