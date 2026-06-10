@@ -19,7 +19,7 @@ function App() {
       dates: "Jan 2026 - Present",
       achievements: [
         "Architected a secure, multi-tenant cloud platform on AWS ECS Fargate using Terraform for IaC to provision ALB routing, TLS certificates, and per-tenant state isolation with S3 backends, a pattern directly transferable to Azure SQL elastic pools and Key Vault.",
-        "Built a high-throughput C#/.NET background service using Quartz.NET and Citus/RDS to aggregate and process critical device utilization data, delivering actionable insights to a client-facing dashboard.",
+        "Deployed & maintained a high-throughput C#/.NET background service using Quartz.NET and Citus/RDS to aggregate and process critical device utilization data, delivering actionable insights to a client-facing dashboard.",
         "Designed and implemented a fully automated CI/CD pipeline with GitHub Actions and OIDC-based authentication, orchestrating Docker builds, ECR pushes, and zero-downtime deployments—demonstrating the core practices of Azure DevOps.",
         "Engineered performant data pipelines to relay critical issues, ensuring transactional integrity for sensitive, multi-tenant datasets.",
       ],
@@ -60,7 +60,8 @@ function App() {
       degree: "B.A., Computer Science",
       school: "University of Virginia",
       date: "August 2020 - May 2024",
-      focus: "Minor: Data Science. Relevant Coursework: Artificial Intelligence, Data Science Systems, Database Systems.",
+      focus:
+        "Minor: Data Science. Relevant Coursework: Artificial Intelligence, Data Science Systems, Database Systems.",
     },
     {
       degree: "Software Engineering Bootcamp",
@@ -139,7 +140,9 @@ function App() {
           <div className="contact-info">
             <strong>Contact Info:</strong>
             <span>
-              <a href="mailto:carlosfr.mgmt@gmail.com">carlosfr.mgmt@gmail.com</a>
+              <a href="mailto:carlosfr.mgmt@gmail.com">
+                carlosfr.mgmt@gmail.com
+              </a>
             </span>
             <span>
               <a
@@ -171,11 +174,29 @@ function App() {
           {/* Download Resume Section */}
           <div className="download-resume">
             <span className="download-label">Download Resume:</span>
-            <a href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.pdf" download className="download-link">PDF</a>
+            <a
+              href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.pdf"
+              download
+              className="download-link"
+            >
+              PDF
+            </a>
             <span className="download-separator">|</span>
-            <a href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.docx" download className="download-link">DOCX</a>
+            <a
+              href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.docx"
+              download
+              className="download-link"
+            >
+              DOCX
+            </a>
             <span className="download-separator">|</span>
-            <a href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.html" download className="download-link">HTML</a>
+            <a
+              href="/Carlos-Resume-and-Profile/resume/Carlos_F_Revilla-Resume.html"
+              download
+              className="download-link"
+            >
+              HTML
+            </a>
           </div>
         </header>
 
@@ -266,10 +287,13 @@ function App() {
                     <p className="talk-sponsors">{talk.sponsors}</p>
                   </div>
                 ))}
-                
+
                 <div className="projects-cta">
-                  <p>Project publications can be found in the dedicated projects tab.</p>
-                  <button 
+                  <p>
+                    Project publications can be found in the dedicated projects
+                    tab.
+                  </p>
+                  <button
                     onClick={() => setActiveTab("projects")}
                     className="nav-to-projects-btn"
                   >
