@@ -26,3 +26,12 @@ dist-ssr
 .env
 .env.local
 .env.*.local
+
+# Resume files - synced from Google Drive
+public/resume/*.pdf
+public/resume/*.docx
+public/resume/*.html
+
+# Master resume markdown
+DS MASTER-RESUME-CARLOS.md
+DS MASTER-RESUME-CARLOS .md
