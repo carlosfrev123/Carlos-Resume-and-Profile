@@ -25,6 +25,17 @@ function App() {
       ],
     },
     {
+      company: "Meta",
+      title: "Data Labeling Analyst",
+      location: "Remote (Contract)",
+      dates: "Nov 2025 - Jan 2026",
+      achievements: [
+        "Annotated and evaluated high-volume text datasets to train and optimize Meta generative machine learning models, providing critical ground-truth data to improve algorithmic performance.",
+        "Maintained a 98%+ quality assurance score by strictly adhering to complex, rapidly evolving content moderation and data labeling guidelines.",
+        "Identified data trends and edge cases, collaborating with cross-functional quality control teams to refine labeling schemas and reduce annotation ambiguity.",
+      ],
+    },
+    {
       company: "Silverchair",
       title: "Full-Stack Software Engineer",
       location: "Charlottesville, VA",
