@@ -16,12 +16,12 @@ function App() {
       company: "Philips",
       title: "Full-Stack Software Engineer",
       location: "Cambridge, MA",
-      dates: "Jan 2026 - Present",
+      dates: "January 2026 - Present",
       achievements: [
-        "Architected a secure, multi-tenant cloud platform on AWS ECS Fargate using Terraform for IaC to provision ALB routing, TLS certificates, and per-tenant state isolation with S3 backends, a pattern directly transferable to Azure SQL elastic pools and Key Vault.",
-        "Deployed & maintained a high-throughput C#/.NET background service using Quartz.NET and Citus/RDS to aggregate and process critical device utilization data, delivering actionable insights to a client-facing dashboard.",
-        "Designed and implemented a fully automated CI/CD pipeline with GitHub Actions and OIDC-based authentication, orchestrating Docker builds, ECR pushes, and zero-downtime deployments—demonstrating the core practices of Azure DevOps.",
-        "Engineered performant data pipelines to relay critical issues, ensuring transactional integrity for sensitive, multi-tenant datasets.",
+        "Enabled on-demand replication of a 20-service AWS architecture across regions and environments by designing a Terraform-based per-tenant isolation pattern for 5 services, then migrating and scaling it to AWS CloudFormation.",
+        "Automated multi-service deployments with GitHub Actions and Docker, using OIDC-based AWS authentication to support zero-downtime releases.",
+        "Delivered resilient, dynamically-scheduled data aggregation for patient monitoring utilization data, with automatic recovery from failed jobs via built-in retry logic, by building a multi-tenant background processing service in C#/.NET 8 with Quartz.NET cron-based scheduling synchronized from PostgreSQL, aggregating data across AWS RDS and Citus.",
+        "Enhanced an internal React/Vite dashboard for monitoring real-time product data streams, using AI-assisted development tools to accelerate feature delivery.",
       ],
     },
     {
@@ -41,10 +41,10 @@ function App() {
       location: "Charlottesville, VA",
       dates: "May 2024 - February 2025",
       achievements: [
-        "Resolved critical data integrity issues within a Solr data pipeline by diagnosing and re-ingesting missing table columns from source databases, restoring content accuracy and eliminating 28% of user-reported errors in a data-intensive product.",
-        "Optimized application performance by identifying and resolving N+1 query bottlenecks against large SQL datasets through strategic caching and batching, directly improving search result load times by ~300ms on web and mobile applications.",
-        "Championed code quality and reduced manual QA efforts by 2 hours per week by creating a comprehensive unit test suite with Jest, ensuring the reliability of data-critical features.",
-        "Collaborated directly with product stakeholders to translate business requirements into technical solutions for a high-availability publishing platform.",
+        "Delivered interactive learning features including quizzes, study modules, and interactive diagrams for a client-facing medical-education platform, by developing new functionality within a .NET MVC architecture serving textbook content to medical students.",
+        "Reduced web and mobile search latency by ~300ms and cut database load for textbook search and filtering by title, quiz, author, and ISBN, by eliminating N+1 query bottlenecks in LINQ keeping queries as IQueryable until final projection and tuning mobile middleware functions with caching and batching.",
+        "Improved content accuracy and reduced user-reported errors by 28% by diagnosing data integrity issues in an Apache Solr pipeline and re-ingesting missing columns.",
+        "Reduced manual QA efforts by 2 hours per week by building a comprehensive Jest test suite for data-critical features, strengthening JavaScript application reliability.",
       ],
     },
     {
